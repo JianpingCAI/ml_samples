@@ -1,3 +1,4 @@
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
@@ -19,11 +20,29 @@ X.head()
 wine.target_names
 wine.target
 
+df = X.join(pd.Series(y, name='class'))
 
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
 LinearDiscriminantAnalysis?
 
 lda = LinearDiscriminantAnalysis()
 X_lda = lda.fit_transform(X, y)
+
+
+lda.explained_variance_ratio_
+
+le = LabelEncoder()
+y = le.fit_transform(df['class'])
+
+plt.xlabel('LD1')
+plt.ylabel('LD2')
+plt.scatter(
+    X_lda[:, 0],
+    X_lda[:, 1],
+    c=y,
+    cmap='rainbow',
+    alpha=0.7,
+    edgecolors='b'
+)
+
 

@@ -19,9 +19,8 @@ sns.set()  # Making seaborn the default styling
 df = pd.read_csv('voice.csv')
 df.head()
 
-df.label = LabelEncoder().fit_transform(df.label)
-df.head()
-df.shape
+label_encoder = LabelEncoder()
+df.label = label_encoder.fit_transform(df.label)
 
 df.info()
 df.describe()

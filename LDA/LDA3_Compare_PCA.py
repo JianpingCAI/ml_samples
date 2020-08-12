@@ -45,4 +45,20 @@ plt.scatter(
     edgecolors='b'
 )
 
+##
+from sklearn.decomposition import PCA
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X, y)
 
+pca.explained_variance_ratio_
+
+plt.xlabel('PC1')
+plt.ylabel('PC2')
+plt.scatter(
+    X_pca[:,0],
+    X_pca[:,1],
+    c=y,
+    cmap='rainbow',
+    alpha=0.7,
+    edgecolors='b'
+)
