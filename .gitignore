@@ -3,3 +3,7 @@ Histogram/fashion_100
 0.0.7
 *.pkl
 *.db
+.vs
+Debug/
+obj/
+*.pyc
